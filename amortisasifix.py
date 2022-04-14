@@ -1,5 +1,4 @@
 import time
-from tracemalloc import start
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -155,9 +154,9 @@ while pengulangan==0:
      
     #Tabel
     print('\nBerikut ini merupakan tabel data amortisasi\n')
-    print('='*64)
+    print('='*65)
     print('\t\t\tTabel Amortisasi')
-    print('='*64)
+    print('='*65)
     tabel={'Angsuran Pokok':pd.Series(pokok_periodik),
            'Angsuran Bunga':pd.Series(bunga_periodik),
            'Total Angsuran':pd.Series(data_total_angsuran),
