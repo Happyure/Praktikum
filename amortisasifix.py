@@ -43,16 +43,23 @@ while pengulangan==0:
             jumlah_pinjamanawal=int(input('\nMasukkan jumlah pinjaman awal\t   : '))
         except Exception:
             print('Tolong masukkan angka dan bukan karakter')
+        else:
+            break
+    while True:
         try:
             suku_bunga=float(input('Masukkan suku bunga (persen)\t   : '))/100
         except Exception:
             print('Tolong masukkan angka dan bukan karakter')
+        else:
+            break
+    while True:
         try:
             tenor_pengembalian=int(input('Masukkan tenor pengembalian (tahun): '))
         except Exception:
             print('Tolong masukkan angka dan bukan karakter')
         else:
             break
+
     print(' ')
     print('='*64)
     #pelunasan
