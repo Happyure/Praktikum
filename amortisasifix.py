@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 localtime = time.asctime( time.localtime(time.time()) )
 data_total_angsuran=[]
+bunga_sisa=[]
 bunga_periodik=[]
 pokok_periodik=[]
 utang_periodik=[]
@@ -152,7 +153,7 @@ while pengulangan==0:
         periode_ke+=1
         if periode_ke==waktu_pelunasan:
             if pelunasan=='yes':
-                bunga_periode=total_angsuran-(sisa_hutang+sum(bunga_periodik))
+                bunga_periode=total_angsuran-(sum(pokok_periodik)+sum(bunga_periodik)+sisa_hutang)
                 pokok_periodik.append(sisa_hutang)
                 bunga_periodik.append(bunga_periode)
                 utang_periodik.append(0)
