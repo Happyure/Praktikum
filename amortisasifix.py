@@ -45,21 +45,30 @@ while pengulangan==0:
         except Exception:
             print('Tolong masukkan angka dan bukan karakter')
         else:
-            break
+            if jumlah_pinjamanawal<=0:
+                print('Tolong masukkan angka lebih dari 0 (nol)')
+            else:
+                break
     while True:
         try:
             suku_bunga=float(input('Masukkan suku bunga (persen)\t   : '))/100
         except Exception:
             print('Tolong masukkan angka dan bukan karakter')
         else:
-            break
+            if suku_bunga<0:
+                print('Tolong masukkan bilangan bulat positif saja')
+            else:
+                break
     while True:
         try:
             tenor_pengembalian=int(input('Masukkan tenor pengembalian (tahun): '))
         except Exception:
             print('Tolong masukkan angka dan bukan karakter')
         else:
-            break
+            if tenor_pengembalian<=0:
+                print('Tolong masukkan angka lebih dari 0 (nol)')
+            else:
+                break
 
     print(' ')
     print('='*64)
@@ -75,7 +84,10 @@ while pengulangan==0:
                     except Exception:
                         print('Tolong masukkan angka dan bukan karakter')
                     else:
-                        break
+                        if pelunasan_input<=0:
+                            print('Tolong masukkan angka lebih dari 0 (nol)')
+                        else:
+                            break
                 break
             else:
                 print('\nBerikut ini bentuk waktu pelunasan yang tersedia:')
@@ -100,7 +112,10 @@ while pengulangan==0:
                             except Exception:
                                 print('Tolong masukkan angka dan bukan karakter')
                             else:
-                                break
+                                if pelunasan_input<=0:
+                                    print('Tolong masukkan angka lebih dari 0 (nol)')
+                                else:
+                                    break
                         break
                     elif pilihan_waktu==2:
                         while True:
@@ -110,7 +125,10 @@ while pengulangan==0:
                             except Exception:
                                 print('Tolong masukkan angka dan bukan karakter')
                             else:
-                                break
+                                if pelunasan_input<=0:
+                                    print('Tolong masukkan angka lebih dari 0 (nol)')
+                                else:
+                                    break
                         break
                     else:
                         print('Pilihan tidak tersedia!')
