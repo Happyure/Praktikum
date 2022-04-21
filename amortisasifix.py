@@ -150,8 +150,12 @@ while pengulangan==0:
         waktu_pelunasan=periode
     pembayaran_perperiode=jumlah_pinjamanawal*bunga*((1+bunga)**periode)//(((1+bunga)**periode)-1)
     print('\nPembayaran perbulan\t: Rp.',int(pembayaran_perperiode))  
-    for i in range(waktu_pelunasan):
-        data_total_angsuran.append(pembayaran_perperiode)
+    if pelunasan in no:  
+        for i in range(waktu_pelunasan):
+            data_total_angsuran.append(pembayaran_perperiode)
+    elif pelunasan in yes:
+        for i in range (waktu_pelunasan-1):
+            data_total_angsuran.append(pembayaran_perperiode)
     
     #Menghitung Total Angsuran
     total_angsuran=pembayaran_perperiode*periode
@@ -171,12 +175,13 @@ while pengulangan==0:
         periode_ke+=1
         if periode_ke==waktu_pelunasan:
             if pelunasan=='yes':
-                bunga_periode=total_angsuran-(sum(pokok_periodik)+sum(bunga_periodik)+sisa_hutang)
                 pokok_periodik.append(sisa_hutang)
-                bunga_periodik.append(bunga_periode)
+                bunga_periodik.append(0)
                 utang_periodik.append(0)
+                data_total_angsuran.append(sisa_hutang)
                 break
-
+    print(data_total_angsuran)
+    print(bunga_periodik)
     #Tabel
     print('\nBerikut ini merupakan tabel data amortisasi\n')
     print('='*64)
@@ -219,7 +224,7 @@ if sum(banyak_pengulangan)>0:
     while True:
         perbandingan=input('Apakah anda ingin mengetahui perbandingan pembayaran yang ada lakukan?: ').lower()
         if perbandingan in yes:
-            print('\nPerhitungan ke-',angsuran_kumulatif.index(min(angsuran_kumulatif))+1,' lebih efektif karena angsuran kumulatifnya lebih kecil yaitu Rp.',min(angsuran_kumulatif))
+            print('\nPerhitungan ke-',angsuran_kumulatif.index(min(angsuran_kumulatif))+1,' lebih efisien karena angsuran kumulatifnya lebih kecil yaitu Rp.',min(angsuran_kumulatif))
             print('='*64)
             break
         elif perbandingan in no:
