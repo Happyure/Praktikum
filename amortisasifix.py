@@ -180,8 +180,7 @@ while pengulangan==0:
                 utang_periodik.append(0)
                 data_total_angsuran.append(sisa_hutang)
                 break
-    print(data_total_angsuran)
-    print(bunga_periodik)
+
     #Tabel
     print('\nBerikut ini merupakan tabel data amortisasi\n')
     print('='*64)
